@@ -1,0 +1,13 @@
+<p>C'est le composant color</p>
+
+<h2>Je suis {{ name }}  </h2>
+
+<div [hidden]="hd" [style.backgroundColor]="bgColor" >
+    Formation Angular
+</div>
+
+<button class="btn btn-primary" (click)="Traitement()">Click Me</button>
+
+<input type="text" class="form-control" [(ngModel)]="name" >
+
+<button class="btn btn-danger" (click)="sendMsg()">Send To Parent</button>
