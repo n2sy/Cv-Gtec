@@ -1,0 +1,17 @@
+.grand {
+    width : 200px;
+    height: 200px;
+}
+
+.c1 {
+    background-color: aqua;
+    color : red;
+}
+.c2 {
+    background-color: blueviolet;
+    color : grey;
+}
+.c3 {
+    background-color: greenyellow;
+    color : white;
+}

@@ -4,7 +4,8 @@
 
 
 <ol>
-    <app-item (click)="sendPers(ListPersonne[0])" [pers]="ListPersonne[0]" ></app-item>
+    <app-item *ngFor="let p of ListPersonne" (click)="sendPers(p)" [pers]="p" ></app-item>
+    <!-- <app-item (click)="sendPers(ListPersonne[0])" [pers]="ListPersonne[0]" ></app-item>
     <app-item (click)="sendPers(ListPersonne[1])" [pers]="ListPersonne[1]"></app-item>
-    <app-item (click)="sendPers(ListPersonne[2])" [pers]="ListPersonne[2]"></app-item>
+    <app-item (click)="sendPers(ListPersonne[2])" [pers]="ListPersonne[2]"></app-item> -->
 </ol>

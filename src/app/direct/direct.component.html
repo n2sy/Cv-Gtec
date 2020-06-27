@@ -1,0 +1,27 @@
+<div class="grand" [ngStyle]="{
+    'backgroundColor' : bgColor,
+    'color' : cl,
+    'fontSize' : fontsize
+}">
+    Exemple de NgStyle
+</div>
+
+<button class="btn btn-primary" (click)="switch()">Switch Style</button>
+
+<div class="grand" [ngClass]="{
+    'c1' : cls1,
+    'c2' : cls2,
+    'c3' : cls3
+}" >
+
+    Exemple de NgClass
+
+</div>
+
+<button class="btn btn-primary" (click)="switchClass()">Switch Class</button>
+
+<div appCustomDir class="grand">
+
+    Test de Directive personnalisé
+
+</div>

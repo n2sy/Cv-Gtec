@@ -11,7 +11,7 @@ export class CvComponent implements OnInit {
   listePersonne : Personne[] = [
     new Personne(1, "jelassi", "nidhal", 35, "Enseignant", "nidhal.jpg"),
     new Personne(2, "simpson", "bart", 12, "Etudiant", "bart.jpg"),
-    new Personne(3, "simpson", "homer", 80, "Ingénieur", "homer.jpg"),
+    new Personne(3, "simpson", "homer", 80, "Ingénieur")
   ]
   constructor() { }
 
