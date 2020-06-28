@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <app-new-account (sendAcc)="addAccount($event)" ></app-new-account>
+            <app-liste-account
+            *ngFor="let acc of listeAccounts"
+            [account] = "acc"
+            ></app-liste-account>
+        </div>
+    </div>
+</div>

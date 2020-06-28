@@ -16,6 +16,11 @@ import { ManageServerComponent } from './manage-server/manage-server.component';
 import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
 import { NoImagePipe } from './no-image.pipe';
+import { MsWordComponent } from './ms-word/ms-word.component';
+import { ListePersonnesService } from './liste-personnes.service';
+import { HomeAccountsComponent } from './home-accounts/home-accounts.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { ListeAccountComponent } from './liste-account/liste-account.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,11 @@ import { NoImagePipe } from './no-image.pipe';
     ManageServerComponent,
     ShortPipe,
     FilterPipe,
-    NoImagePipe
+    NoImagePipe,
+    MsWordComponent,
+    HomeAccountsComponent,
+    NewAccountComponent,
+    ListeAccountComponent
   ],
   imports: [
     BrowserModule,

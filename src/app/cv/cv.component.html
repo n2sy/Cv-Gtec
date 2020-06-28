@@ -1,11 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-            <app-liste (pSended)="sendToDetail($event)" [ListPersonne]="listePersonne" ></app-liste>
+            <button class="btn btn-primary" (click)="addPerson()">Ajouter Personne</button>
+            <app-liste (pSended)="sendToDetail($event)"></app-liste>
         </div>
         <div class="col-md-7">
             <app-detail *ngIf="selectedPers != null"  [pers]="selectedPers" ></app-detail>
         </div>
 
     </div>
-</div>>
+</div>

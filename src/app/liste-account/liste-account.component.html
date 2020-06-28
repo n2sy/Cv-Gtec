@@ -1,0 +1,15 @@
+
+
+
+
+<div class="row">
+    <div class="col-md-8">
+    <h6> {{account.name }} </h6>
+    <br>
+    <p>This account is {{ account.status }}</p>
+    <br>
+    <button class="btn btn-primary" (click)="setTo('active')">Set to active</button>
+    <button class="btn btn-warning" (click)="setTo('inactive')">Set to inctive</button>
+    <button class="btn btn-info" (click)="setTo('hidden')">Set to hidden</button>
+</div>
+</div>

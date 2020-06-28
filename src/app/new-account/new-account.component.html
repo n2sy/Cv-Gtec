@@ -1,0 +1,10 @@
+<div class="row">
+<strong>Account name</strong>
+    <input #name type="text" class="form-control">
+    <select #stat class="form-control">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="hidden">Hidden</option>
+    </select>
+    <button class="btn btn-primary" (click)="addAccount(name.value, stat.value)">Add Account</button>
+</div>
