@@ -21,6 +21,11 @@ import { ListePersonnesService } from './liste-personnes.service';
 import { HomeAccountsComponent } from './home-accounts/home-accounts.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { ListeAccountComponent } from './liste-account/liste-account.component';
+import { RecrueComponent } from './recrue/recrue.component';
+import { HomeComponent } from './home/home.component';
+import { GTEC_ROUTING } from './app.routing';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -41,11 +46,16 @@ import { ListeAccountComponent } from './liste-account/liste-account.component';
     MsWordComponent,
     HomeAccountsComponent,
     NewAccountComponent,
-    ListeAccountComponent
+    ListeAccountComponent,
+    RecrueComponent,
+    HomeComponent,
+    NotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    GTEC_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
