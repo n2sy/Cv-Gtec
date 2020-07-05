@@ -9,6 +9,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { InfoComponent } from './info/info.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
+import { ServersComponent } from './servers/servers.component';
+import { ServerComponent } from './server/server.component';
+import { EditServerComponent } from './edit-server/edit-server.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './user/user.component';
 
 
 const gtecRoutes : Routes = [
@@ -23,6 +28,13 @@ const gtecRoutes : Routes = [
     {path : 'accounts', component: HomeAccountsComponent},
     {path : 'servers', component: ManageServerComponent},
     {path : 'color', component: ColorComponent},
+    {path : 'serveurs', component : ServersComponent, children : [
+        {path : ':id', component: ServerComponent},
+        {path : ':id/edit', component: EditServerComponent},
+    ]},
+    {path : 'users', component : UsersComponent, children : [
+        {path : ':id', component: UserComponent},
+    ]},
     {path : 'not-found', component: NotFoundComponent},
     {path : '**', redirectTo : 'not-found'}
 ]

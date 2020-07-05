@@ -29,6 +29,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InfoComponent } from './info/info.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
+import { UserComponent } from './user/user.component';
+import { UsersComponent } from './users/users.component';
+import { ServerComponent } from './server/server.component';
+import { ServersComponent } from './servers/servers.component';
+import { EditServerComponent } from './edit-server/edit-server.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +61,12 @@ import { UpdateComponent } from './update/update.component';
     NavbarComponent,
     InfoComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    UserComponent,
+    UsersComponent,
+    ServerComponent,
+    ServersComponent,
+    EditServerComponent
   ],
   imports: [
     BrowserModule,
