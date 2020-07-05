@@ -20,6 +20,10 @@ export class ListePersonnesService {
     return this.listePersonne;
   }
 
+  getPersonneById(id) {
+    return this.listePersonne.find((p) => p.id == id);
+  }
+
   addPersonne(p) {
     this.listePersonne.push(p);
   }

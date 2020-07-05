@@ -8,7 +8,7 @@ import { ListeAccountService } from '../liste-account.service';
 })
 export class NewAccountComponent implements OnInit {
   //@Output() sendAcc = new EventEmitter
-  constructor(private accService : ListeAccountService) { }
+  
 
   ngOnInit() {
   }
@@ -18,5 +18,7 @@ export class NewAccountComponent implements OnInit {
     this.accService.addAccount({name : n, status : s});
 
   }
+
+  constructor(private accService : ListeAccountService) { }
 
 }

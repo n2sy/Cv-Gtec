@@ -26,6 +26,9 @@ import { HomeComponent } from './home/home.component';
 import { GTEC_ROUTING } from './app.routing';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InfoComponent } from './info/info.component';
+import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     RecrueComponent,
     HomeComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    InfoComponent,
+    AddComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
