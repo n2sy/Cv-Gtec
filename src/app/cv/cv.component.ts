@@ -14,7 +14,8 @@ export class CvComponent implements OnInit {
   constructor(private persService : ListePersonnesService) { }
 
   ngOnInit() {
-    this.listePersonne = this.persService.getListePersonnes();
+    //this.listePersonne = this.persService.getListePersonnes();
+   
   }
 
   sendToDetail(p) {

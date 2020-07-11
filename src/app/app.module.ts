@@ -35,6 +35,8 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { EditServerComponent } from './edit-server/edit-server.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -68,12 +70,14 @@ import { LoginComponent } from './login/login.component';
     ServerComponent,
     ServersComponent,
     EditServerComponent,
-    LoginComponent
+    LoginComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    GTEC_ROUTING
+    GTEC_ROUTING,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

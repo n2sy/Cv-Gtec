@@ -4,24 +4,35 @@
 
 import { Injectable } from '@angular/core';
 import { Personne } from './Model/personne';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListePersonnesService {
-  listePersonne : Personne[] = [
-    new Personne(1, "jelassi", "nidhal", 35, "Enseignant", "nidhal.jpg"),
-    new Personne(2, "simpson", "bart", 12, "Etudiant", "bart.jpg"),
-    new Personne(3, "simpson", "homer", 80, "Ingénieur")
-  ]
-  constructor() { }
+  link = "http://localhost:3000/api/personnes";
+   listePersonne : Personne[] = [
+  //   new Personne(1, "jelassi", "nidhal", 35, "Enseignant", "nidhal.jpg"),
+  //   new Personne(2, "simpson", "bart", 12, "Etudiant", "bart.jpg"),
+  //   new Personne(3, "simpson", "homer", 80, "Ingénieur")
+   ]
+  constructor(private http : HttpClient) { }
 
   getListePersonnes() {
     return this.listePersonne;
   }
 
+  getListePersonnesAPI() : Observable<Personne[]>{
+    return this.http.get<Personne[]>(this.link)
+  }
+
   getPersonneById(id) {
     return this.listePersonne.find((p) => p.id == id);
+  }
+
+  getPersonneByIdAPI(id) : Observable<Personne> {
+    return this.http.get<Personne>(this.link+'/'+id);
   }
 
   addPersonne(p) {

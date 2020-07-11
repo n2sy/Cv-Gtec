@@ -20,8 +20,17 @@ export class InfoComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(
       (reponse : Params) => {
-        this.pers = this.persService.getPersonneById(reponse['id']);
-
+        this.persService.getPersonneByIdAPI(reponse['id']).subscribe(
+          (reponse : Personne) => {
+            this.pers = reponse;
+          },
+          (error) => {
+            console.log("Error with getPersonneById");
+          }
+        )
+      },
+      (error) => {
+        console.log("Error with Route Params");
       }
     )
   }

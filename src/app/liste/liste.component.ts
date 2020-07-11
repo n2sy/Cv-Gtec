@@ -10,12 +10,20 @@ import { ListePersonnesService } from '../liste-personnes.service';
 export class ListeComponent implements OnInit {
   
   ListPersonne : Personne[] = [];
-
+  @Output() pSended = new EventEmitter<Personne>();
 
   constructor(private pServ : ListePersonnesService) { }
-  @Output() pSended = new EventEmitter<Personne>();
+  
+  
   ngOnInit() {
-    this.ListPersonne = this.pServ.getListePersonnes();
+    this.pServ.getListePersonnesAPI().subscribe(
+      (reponse : Personne[]) => {
+        this.ListPersonne = reponse;
+      },
+      (error) => {
+        alert('Erreur de récupération des personnes !')
+      }
+    )
   }
 
   sendPers(p) {
