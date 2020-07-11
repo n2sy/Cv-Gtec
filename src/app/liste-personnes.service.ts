@@ -25,6 +25,17 @@ export class ListePersonnesService {
   }
 
   addPersonne(p) {
+    p['id'] = this.listePersonne[this.listePersonne.length - 1]['id'] + 1;
     this.listePersonne.push(p);
+  }
+
+  deletePersonne(p) {
+    let i = this.listePersonne.indexOf(p);
+    this.listePersonne.splice(i, 1);
+  }
+
+  updatePersonne(p) {
+    let i = this.listePersonne.indexOf(p);
+    this.listePersonne[i] = p;
   }
 }

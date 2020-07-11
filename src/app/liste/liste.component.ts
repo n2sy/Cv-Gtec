@@ -5,8 +5,7 @@ import { ListePersonnesService } from '../liste-personnes.service';
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.component.html',
-  styleUrls: ['./liste.component.css'],
-  providers : [ListePersonnesService]
+  styleUrls: ['./liste.component.css']
 })
 export class ListeComponent implements OnInit {
   
