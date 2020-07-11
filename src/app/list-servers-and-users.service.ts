@@ -29,5 +29,10 @@ getListServers() {
 getServerById(id) {
   return this.ListeServers.find((s) => s.id == id);
 }
+
+updateServer(serverUpdated) {
+  let i = this.ListeServers.indexOf(serverUpdated);
+  this.ListeServers[i] = serverUpdated;
+}
   constructor() { }
 }

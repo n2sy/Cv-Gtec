@@ -5,6 +5,7 @@
                 <a class="list-group-item"
                 *ngFor="let s of ListeServers"
                 [routerLink]="['/serveurs', s.id]"
+                [queryParams]="{allowEdit : s.id == 3 ? 1 : 0}"
                 >{{ s.name }}</a>
             </div>
         </div>

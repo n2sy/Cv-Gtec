@@ -3,5 +3,7 @@
 <h6> Le statut du serveur est {{ ser.status }}
 </h6>
 
-<button class="btn btn-success" (click)="goToEdit()">Edit</button>
+<button [disabled]="allow" class="btn btn-success" (click)="goToEdit()">Edit</button>
+
+<div *ngIf="allow" > <strong>Vous n'avez pas les permissions nécessaires pour éditer !</strong></div>
 

@@ -8,6 +8,7 @@ import { ListServersAndUsersService } from '../list-servers-and-users.service';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
+  allow : boolean = false;
   ser : { id : number, name: String, status : String};
 
   constructor(private activ : ActivatedRoute, 
@@ -18,6 +19,12 @@ export class ServerComponent implements OnInit {
     this.activ.params.subscribe(
       (reponse : Params) => {
         this.ser = this.serv.getServerById(reponse['id'])
+      }
+    );
+
+    this.activ.queryParams.subscribe(
+      (querypar) => {
+        this.allow = querypar['allowEdit'] == 1 ? false : true;
       }
     )
   }

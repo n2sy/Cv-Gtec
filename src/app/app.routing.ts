@@ -14,6 +14,7 @@ import { ServerComponent } from './server/server.component';
 import { EditServerComponent } from './edit-server/edit-server.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
 
 
 const gtecRoutes : Routes = [
@@ -27,6 +28,7 @@ const gtecRoutes : Routes = [
     {path : 'word', component: MsWordComponent},
     {path : 'accounts', component: HomeAccountsComponent},
     {path : 'servers', component: ManageServerComponent},
+    {path : 'login', component: LoginComponent},
     {path : 'color', component: ColorComponent},
     {path : 'serveurs', component : ServersComponent, children : [
         {path : ':id', component: ServerComponent},

@@ -34,6 +34,7 @@ import { UsersComponent } from './users/users.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { EditServerComponent } from './edit-server/edit-server.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { EditServerComponent } from './edit-server/edit-server.component';
     UsersComponent,
     ServerComponent,
     ServersComponent,
-    EditServerComponent
+    EditServerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
