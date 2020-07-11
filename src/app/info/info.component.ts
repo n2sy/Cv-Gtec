@@ -37,8 +37,17 @@ export class InfoComponent implements OnInit {
 
   supprimerPersonne() {
     if(confirm('Voulez-vous vraiment supprimer '+ this.pers['prenom'] + ' ?')) {
-      this.persService.deletePersonne(this.pers);
-      this.router.navigate(['cv']);
+      //this.persService.deletePersonne(this.pers);
+      this.persService.deletePersonneAPI(this.pers['id']).subscribe(
+        (reponse) => {
+          this.router.navigate(['cv']);
+        },
+        (error) => {
+          console.log("Error with DeletePerson");
+          
+        }
+      )
+      
     }
   }
 

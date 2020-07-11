@@ -17,16 +17,33 @@ export class UpdateComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (reponse) => {
-        this.EditedPers = this.persServ.getPersonneById(reponse['id']);
-        console.log(this.EditedPers);
+        this.persServ.getPersonneByIdAPI(reponse['id']).subscribe(
+          (reponse : Personne) => {
+            this.EditedPers = reponse;
+          },
+          (error) => {
+            console.log("Error with getPersonneById");
+            
+          }
+        );
+       
         
       }
     )
   }
 
   MiseAJourPersonne() {
-    this.persServ.updatePersonne(this.EditedPers);
-    this.router.navigate(['cv']);
+    //this.persServ.updatePersonne(this.EditedPers);
+    this.persServ.updatePersonneAPI(this.EditedPers).subscribe(
+      (reponse) => {
+        this.router.navigate(['cv']);
+      },
+      (error) => {
+        console.log("Error with updatePerson");
+        
+      }
+    )
+    
   }
 
 }

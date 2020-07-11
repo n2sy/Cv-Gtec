@@ -1,22 +1,24 @@
-<form #f="ngForm" (ngSubmit)="showForm(f)">
+<form #f="ngForm" (ngSubmit)="login(f.value)">
+    <div class="alert alert-danger" *ngIf="error">
+        Identifiants invalides !
+    </div>
 
-
-    Example errors<br>
+    <!-- Example errors<br>
     <input ngModel #er="ngModel" required minlength="6" pattern="nidhal jelassi" type="text" class="form-control" name="options">
     <div class="alert alert-danger" *ngIf="er.invalid && er.touched">
         <p *ngIf="er.errors.required" >Ce champ est obligatoire !</p>
         <p *ngIf="er.errors.minlength">Le nombre minimum de caractères est 6 !</p>
         <p *ngIf="er.errors.pattern">Le pattern est nidhal jelassi !</p>
-    </div>
+    </div> -->
 
     <label for="login">Login</label>
-    <input ngModel #name="ngModel" required email type="text" class="form-control" name="login" id="login">
+    <input ngModel #name="ngModel" required email type="text" class="form-control" name="email" id="login">
     
     <div class="alert alert-danger" *ngIf="name.invalid && name.dirty" >Veuillez entrer une adresse mail valide !</div>
     <label for="password">Password</label>
     <input ngModel type="text" class="form-control" name="password" id="password">
    
-    <label for="section">Section</label>
+    <!-- <label for="section">Section</label>
     <select [ngModel]="mySection" name="section" id="section" class="form-control">
         <option value="gl">Génie Logiciel</option>
         <option value="wm">Web et Mobile</option>
@@ -25,9 +27,9 @@
     <br>
     <label for="comm">Commentaire</label>
     <input type="text" class="form-control" [(ngModel)]="myComment" name="comment" id="comm">
-    <br>
-    <button class="btn btn-primary">Submit</button>
-    <button class="btn btn-danger" (click)="resetForm(f)">Reset</button><br>
+    <br> -->
+    <button class="btn btn-primary">Connexion</button>
+    <!-- <button class="btn btn-danger" (click)="resetForm(f)">Reset</button><br>
     <button class="btn btn-warning" (click)="generatePwd(f)">`Random Pwd</button><br>
     <button class="btn btn-warning" (click)="generatePwdII(f)">`Random Pwd </button><br>
     
@@ -35,5 +37,5 @@
 
     <pre>
         {{ f.value | json}}
-    </pre>
+    </pre> -->
 </form>

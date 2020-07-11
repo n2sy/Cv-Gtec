@@ -16,10 +16,18 @@ export class AddComponent implements OnInit {
   }
 
   ajouterPersonne(newP) {
-    this.pServ.addPersonne(newP);
-    console.log(this.pServ.getListePersonnes());
+    //this.pServ.addPersonne(newP);
+    this.pServ.addPersonneAPI(newP).subscribe(
+      (reponse) => {
+        this.router.navigate(['cv'])
+      },
+      (error) => {
+        console.log("Error with addPerson");
+        
+      }
+    )
     
-    this.router.navigate(['cv'])
+    
     
   }
 

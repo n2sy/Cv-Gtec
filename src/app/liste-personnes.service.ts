@@ -32,21 +32,37 @@ export class ListePersonnesService {
   }
 
   getPersonneByIdAPI(id) : Observable<Personne> {
-    return this.http.get<Personne>(this.link+'/'+id);
-  }
+    //return this.http.get<Personne>(this.link+'/'+id);
+    return this.http.get<Personne>(`${this.link}/${id}`);
+
+  }    
+ 
 
   addPersonne(p) {
     p['id'] = this.listePersonne[this.listePersonne.length - 1]['id'] + 1;
     this.listePersonne.push(p);
   }
 
+  addPersonneAPI(p) : Observable<any> {
+    return this.http.post(this.link, p);
+  }
+
+
   deletePersonne(p) {
     let i = this.listePersonne.indexOf(p);
     this.listePersonne.splice(i, 1);
   }
 
+  deletePersonneAPI(id) : Observable<any> {
+    return this.http.delete(`${this.link}/${id}`);
+  }
+
   updatePersonne(p) {
     let i = this.listePersonne.indexOf(p);
     this.listePersonne[i] = p;
+  }
+
+  updatePersonneAPI(p) : Observable<any> {
+    return this.http.put(this.link, p);
   }
 }
