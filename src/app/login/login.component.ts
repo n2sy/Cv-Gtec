@@ -22,4 +22,22 @@ export class LoginComponent implements OnInit {
     f.reset();
   }
 
+  generatePwd(f) {
+    f.setValue({
+      "options": "",
+      "login": "",
+      "password": "generatedPqssword123",
+      "section": "d",
+      "comment": ""
+    })
+  }
+
+    generatePwdII(f) {
+      f.form.patchValue({
+        "password" : "nidhalpassword"
+      })
+    }
+
+  
+
 }

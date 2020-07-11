@@ -1,4 +1,14 @@
 <form #f="ngForm" (ngSubmit)="showForm(f)">
+
+
+    Example errors<br>
+    <input ngModel #er="ngModel" required minlength="6" pattern="nidhal jelassi" type="text" class="form-control" name="options">
+    <div class="alert alert-danger" *ngIf="er.invalid && er.touched">
+        <p *ngIf="er.errors.required" >Ce champ est obligatoire !</p>
+        <p *ngIf="er.errors.minlength">Le nombre minimum de caractères est 6 !</p>
+        <p *ngIf="er.errors.pattern">Le pattern est nidhal jelassi !</p>
+    </div>
+
     <label for="login">Login</label>
     <input ngModel #name="ngModel" required email type="text" class="form-control" name="login" id="login">
     
@@ -17,7 +27,11 @@
     <input type="text" class="form-control" [(ngModel)]="myComment" name="comment" id="comm">
     <br>
     <button class="btn btn-primary">Submit</button>
-    <button class="btn btn-danger" (click)="resetForm(f)">Reset</button>
+    <button class="btn btn-danger" (click)="resetForm(f)">Reset</button><br>
+    <button class="btn btn-warning" (click)="generatePwd(f)">`Random Pwd</button><br>
+    <button class="btn btn-warning" (click)="generatePwdII(f)">`Random Pwd </button><br>
+    
+        <input id="my-input" class="form-control" type="text" name="">
 
     <pre>
         {{ f.value | json}}
