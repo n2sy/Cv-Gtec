@@ -15,21 +15,25 @@ import { EditServerComponent } from './edit-server/edit-server.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './login.guard';
+import { LogoutGuard } from './logout.guard';
+import { RhManagerComponent } from './rh-manager/rh-manager.component';
 
 
 const gtecRoutes : Routes = [
     {path : '', component: HomeComponent},
     {path :'cv', children : [
         {path :'', component : CvComponent},
-        {path :'add', component : AddComponent},
+        {path :'add', component : AddComponent, canActivate: [LoginGuard]},
         {path :'edit/:id', component : UpdateComponent},
         {path :':id', component : InfoComponent}
     ]},
     {path : 'word', component: MsWordComponent},
     {path : 'accounts', component: HomeAccountsComponent},
     {path : 'servers', component: ManageServerComponent},
-    {path : 'login', component: LoginComponent},
+    {path : 'login', component: LoginComponent, canActivate : [LogoutGuard]},
     {path : 'color', component: ColorComponent},
+    {path : 'rh', component: RhManagerComponent},
     {path : 'serveurs', component : ServersComponent, children : [
         {path : ':id', component: ServerComponent},
         {path : ':id/edit', component: EditServerComponent},

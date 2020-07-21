@@ -10,14 +10,14 @@ import { iif } from 'rxjs';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any, filterStat : string, nomProp : string): any {
+  transform(value: any, filterStat : any): any {
     if(filterStat == '') {
       return value;
     }
     else {
       let resultServers = [];
       for(let s of value) {
-        if(s[nomProp] == filterStat)
+        if(s['status'] == filterStat)
           resultServers.push(s); 
       }
       return resultServers;

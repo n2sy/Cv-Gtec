@@ -5,7 +5,7 @@
             <input type="text" class="form-control" [(ngModel)]="filterStatus">
             <ul class="list-group">
                 <li class="list-group-item"
-                *ngFor="let s of listeServers | filter:filterStatus:'status'"
+                *ngFor="let s of listeServers | filter:filterStatus"
                 [ngClass]="getClass(s)"
                 >
             <strong>{{ s.name | short:6 }}</strong> | {{ s.type }} | {{ s.d | date:'fullDate' | uppercase }}

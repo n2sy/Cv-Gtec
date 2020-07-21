@@ -9,7 +9,7 @@
       <a class="nav-link" routerLink = "/cv" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">CV</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink = "/cv/add" routerLinkActive="active">Add CV</a>
+      <a class="nav-link" *ngIf="loginServ.isLogged()" routerLink = "/cv/add" routerLinkActive="active">Add CV</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['word']" routerLinkActive="active">Ms-Word</a>
@@ -27,9 +27,12 @@
       <a class="nav-link" [routerLink]="['users']" routerLinkActive="active">Users's List</a>
     </li> -->
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['color']" routerLinkActive="active">Color</a>
+      <a class="nav-link" [routerLink]="['rh']" routerLinkActive="active">RH Manager</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['login']" routerLinkActive="active">Login</a>
+      <a class="nav-link" *ngIf="!loginServ.isLogged()" [routerLink]="['login']" routerLinkActive="active">Login</a>
+    </li>
+    <li class="nav-item" (click)="seDeconnecter()">
+      <a class="nav-link" *ngIf="loginServ.isLogged()">Logout</a>
     </li>
   </ul>

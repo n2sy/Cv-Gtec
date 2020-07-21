@@ -3,11 +3,12 @@
     "name": "db",
     "connector": "memory"
   },
-  "nidhaldb" : {
+  "nidhaldb": {
     "host": "localhost",
     "port": 8889,
     "database": "GtecDB",
     "password": "root",
+    "name": "nidhaldb",
     "user": "root",
     "connector": "mysql"
   }

@@ -12,4 +12,17 @@ export class LoginService {
   seConnecter(identifiants) {
     return this.http.post(`${this.link}/login`, identifiants);
   }
+
+isLogged() {
+  let myToken = localStorage.getItem('token');
+  if(myToken)
+    return true;
+  else
+    return false;
+}
+
+seDeconnecter() {
+  localStorage.removeItem('token');
+}
+
 }

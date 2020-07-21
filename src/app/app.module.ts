@@ -37,6 +37,10 @@ import { EditServerComponent } from './edit-server/edit-server.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpComponent } from './http/http.component';
+import { loginInterceptorProvider } from './login.interceptor';
+import { SearchComponent } from './search/search.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { RhManagerComponent } from './rh-manager/rh-manager.component';
 
 @NgModule({
   declarations: [
@@ -71,15 +75,18 @@ import { HttpComponent } from './http/http.component';
     ServersComponent,
     EditServerComponent,
     LoginComponent,
-    HttpComponent
+    HttpComponent,
+    SearchComponent,
+    RhManagerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     GTEC_ROUTING,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
-  providers: [],
+  providers: [loginInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
